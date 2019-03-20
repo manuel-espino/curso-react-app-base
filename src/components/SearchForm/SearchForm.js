@@ -4,6 +4,10 @@ import React, { PropTypes } from 'react';
  * Renderiza el formulario de búsqueda.
  */
 class SearchForm extends React.Component {
+  
+  static PropTypes = {
+    seach: PropTypes.string.isRequired
+  }  
 
   constructor(props){
     super(props);
@@ -12,7 +16,8 @@ class SearchForm extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
 
-    this.state = {
+      
+  this.state = {
       search: ''
     }
 
