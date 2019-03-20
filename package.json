@@ -5,9 +5,11 @@
   "homepage": "https://angelmmiguel.github.io/curso-react-app",
   "devDependencies": {
     "enzyme": "^3.9.0",
+    "enzyme-adapter-react-15": "^1.3.1",
     "gh-pages": "^0.12.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-scripts": "0.8.3"
+    "react-scripts": "0.8.3",
+    "react-test-renderer": "^15.6.2"
   },
   "dependencies": {
     "react": "^15.4.1",
