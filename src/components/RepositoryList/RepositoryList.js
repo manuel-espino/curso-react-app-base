@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import RepositoryRow from '../RepositoryRow';
 import HintMessage from '../HintMessage';
+import Paginator from '../Paginator';
 
 /**
  * Muestra los repositorios en una lista.
@@ -15,7 +16,7 @@ class RepositoryList extends React.PureComponent {
   }
 
   renderMessage() {
-    let text = '', l = this.props.repositories.length;
+    let text = '', l = this.props.data.length;
 
     if (this.props.loading) {
       text = <span>Searching results for <b>{this.props.search}</b></span>;
@@ -34,7 +35,7 @@ class RepositoryList extends React.PureComponent {
 
   // Renderizamos la tabla si no estamos cargando resultados
   renderTable() {
-    if (this.props.repositories.length === 0) { return null;}
+    if (this.props.data.length === 0) { return null;}
    
    return <table className="u-full-width">
       <thead>
@@ -47,7 +48,7 @@ class RepositoryList extends React.PureComponent {
         </tr>
       </thead>
       <tbody>
-        {this.props.repositories.map(repo =>
+        {this.props.data.map(repo =>
           <RepositoryRow repo={ repo } key={ repo.id } />
         )}
       </tbody>
@@ -66,4 +67,4 @@ class RepositoryList extends React.PureComponent {
 }
 
 // Export the class
-export default RepositoryList;
+export default Paginator(RepositoryList);
