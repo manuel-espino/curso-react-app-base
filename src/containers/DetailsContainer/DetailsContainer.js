@@ -18,7 +18,8 @@ class DetailsContainer extends React.Component {
     params: PropTypes.shape({
       user: PropTypes.string.isRequired,
       repo: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    router: PropTypes.object.isRequired
   };
 
   /**
@@ -26,6 +27,8 @@ class DetailsContainer extends React.Component {
    */
   constructor(props) {
     super(props);
+
+    this.back = this.back.bind(this);
 
     this.state = {
       releases: [],
@@ -53,12 +56,16 @@ class DetailsContainer extends React.Component {
     return `${this.props.params.user}/${this.props.params.repo}`;
   }
 
+  back(){
+    this.props.router.goBack();
+  }
+
   /**
    * UI del contenedor
    */
   render() {
     return <section>
-      <h2>Releases of <b>{this.repoName}</b></h2>
+      <h2>Releases of <b>{this.repoName}</b> <button onClick={ this.back }>Back</button></h2>
       <ReleaseList data={this.state.releases} loading={this.state.loading}
         repoName={this.repoName} total={this.state.releases.length}
         itemsPerPage={5} />

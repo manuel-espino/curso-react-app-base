@@ -35,7 +35,7 @@ class SearchContainer extends React.Component {
    */
   stubData() {
     let repo = {
-      full_name: 'My Repository',
+      full_name: 'MyRepository',
       owner: {
         login: 'Angel',
         avatar_url: 'https://avatars.githubusercontent.com/u/4056725?v=3',

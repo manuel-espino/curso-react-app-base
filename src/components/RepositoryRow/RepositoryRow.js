@@ -29,7 +29,7 @@ class RepositoryRow extends React.PureComponent {
       <td><FaStar /> { repo.stargazers_count }</td>
       <td><FaCodeFork /> { repo.forks_count }</td>
       <td className="align-right">
-        <Link className="button button-primary" to={ `/${repo.full_name}`}>Releases</Link>
+        <Link className="button button-primary" to={ `${repo.owner.login}/${repo.full_name}`}>Releases</Link>
       </td>
     </tr>
   }
